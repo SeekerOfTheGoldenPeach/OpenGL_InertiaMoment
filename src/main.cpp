@@ -1,14 +1,10 @@
 #include "../include/calculate_inertia.hpp"
+#include "../include/read_coordinates.hpp"
+
 
 int main()
 {
-    Coordinates p1 = {0.0f, 0.0f};
-    Coordinates p2 = {20.0f, 0.0f};
-    Coordinates p3 = {20.0f, 200.0f};
-    Coordinates p4 = {0.0f, 200.0f};
-    Coordinates p5 = {0.0f, 0.0f};
-
-    std::vector<Coordinates> figureCoordinates = {p1, p2, p3, p4, p5};
+    std::vector<Coordinates> figureCoordinates = getCoordinatesFromFile("../data/figure_1.txt");
 
     CalculationData figure = calculate_inertia(figureCoordinates);
 
